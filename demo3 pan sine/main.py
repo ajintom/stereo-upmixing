@@ -1,4 +1,4 @@
-
+from __future__ import print_function
 import numpy as np
 import math, copy, sys, os
 import matplotlib.pyplot as plt
@@ -91,8 +91,8 @@ def movingAvg (arr, kSize = smoothingKernelSize):#moving average filter
 #------STFT--------------------------------------------------------------------------
 
 def stft_anal_synth(s1,s2, fs, w, N, H, 
-	m_phi=[np.zeros(1+N/2), np.zeros(1+N/2), np.zeros(1+N/2)], p_phi=[np.zeros(1+N/2), np.zeros(1+N/2), np.zeros(1+N/2)],
-	m_sim=[np.zeros(1+N/2), np.zeros(1+N/2), np.zeros(1+N/2)], p_sim=[np.zeros(1+N/2), np.zeros(1+N/2), np.zeros(1+N/2)]):
+	m_phi=[np.zeros(1+N//2), np.zeros(1+N//2), np.zeros(1+N//2)], p_phi=[np.zeros(1+N//2), np.zeros(1+N//2), np.zeros(1+N//2)],
+	m_sim=[np.zeros(1+N//2), np.zeros(1+N//2), np.zeros(1+N//2)], p_sim=[np.zeros(1+N//2), np.zeros(1+N//2), np.zeros(1+N//2)]):
 	"""
 	STFT analysis-synthesis for Ambience Extraction
 	s1: stereo_left
@@ -222,9 +222,9 @@ def stft_anal_synth(s1,s2, fs, w, N, H,
 		# plt.plot(gwf_r)
 		# plt.show()
 
-		#plt.plot(mX1)
-		#plt.plot(mY_C)
-		#plt.show()
+		plt.plot(mX1)
+		plt.plot(mY_C)
+		plt.show()
 
 		mY1 = 20*np.log10(mY1); 
 		mY2 = 20*np.log10(mY2);
